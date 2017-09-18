@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
@@ -26,5 +26,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 4;
+}
 
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *caseTitles = @[@"没有Tab", @"2个Tab", @"3个Tab", @"自定义Tab视图"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cell" forIndexPath: indexPath];
+    cell.textLabel.text = caseTitles[indexPath.row];
+    return cell;
+    
+}
 @end

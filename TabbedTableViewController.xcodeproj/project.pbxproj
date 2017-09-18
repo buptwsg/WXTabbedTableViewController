@@ -14,6 +14,7 @@
 		B2EC8BD01F6EACAA008AC27C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2EC8BC91F6EACAA008AC27C /* Info.plist */; };
 		B2EC8BD11F6EACAA008AC27C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC8BCB1F6EACAA008AC27C /* ViewController.m */; };
 		B2EC8BD31F6EACB7008AC27C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC8BD21F6EACB7008AC27C /* main.m */; };
+		C602CE841F6FA39B00377640 /* WXTabbedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CE831F6FA39B00377640 /* WXTabbedTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		B2EC8BCA1F6EACAA008AC27C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = SOURCE_ROOT; };
 		B2EC8BCB1F6EACAA008AC27C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = SOURCE_ROOT; };
 		B2EC8BD21F6EACB7008AC27C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		C602CE821F6FA39B00377640 /* WXTabbedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabbedTableViewController.h; sourceTree = "<group>"; };
+		C602CE831F6FA39B00377640 /* WXTabbedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabbedTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +46,8 @@
 		B2EC8B9D1F6EAB50008AC27C = {
 			isa = PBXGroup;
 			children = (
-				B2EC8BA81F6EAB51008AC27C /* TabbedTableViewController */,
+				C602CE811F6FA34E00377640 /* TabbedTableViewController */,
+				B2EC8BA81F6EAB51008AC27C /* Demo */,
 				B2EC8BA71F6EAB51008AC27C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,7 +60,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B2EC8BA81F6EAB51008AC27C /* TabbedTableViewController */ = {
+		B2EC8BA81F6EAB51008AC27C /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				B2EC8BC11F6EACAA008AC27C /* AppDelegate.h */,
@@ -68,6 +72,7 @@
 				B2EC8BCB1F6EACAA008AC27C /* ViewController.m */,
 				B2EC8BA91F6EAB51008AC27C /* Supporting Files */,
 			);
+			name = Demo;
 			path = TabbedTableViewController;
 			sourceTree = "<group>";
 		};
@@ -87,6 +92,15 @@
 			);
 			path = Base.lproj;
 			sourceTree = SOURCE_ROOT;
+		};
+		C602CE811F6FA34E00377640 /* TabbedTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C602CE821F6FA39B00377640 /* WXTabbedTableViewController.h */,
+				C602CE831F6FA39B00377640 /* WXTabbedTableViewController.m */,
+			);
+			path = TabbedTableViewController;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -160,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C602CE841F6FA39B00377640 /* WXTabbedTableViewController.m in Sources */,
 				B2EC8BD11F6EACAA008AC27C /* ViewController.m in Sources */,
 				B2EC8BD31F6EACB7008AC27C /* main.m in Sources */,
 				B2EC8BCC1F6EACAA008AC27C /* AppDelegate.m in Sources */,
