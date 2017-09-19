@@ -15,6 +15,10 @@
 		B2EC8BD11F6EACAA008AC27C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC8BCB1F6EACAA008AC27C /* ViewController.m */; };
 		B2EC8BD31F6EACB7008AC27C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC8BD21F6EACB7008AC27C /* main.m */; };
 		C602CE841F6FA39B00377640 /* WXTabbedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CE831F6FA39B00377640 /* WXTabbedTableViewController.m */; };
+		C602CEB51F70B9FA00377640 /* WXTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEB41F70B9FA00377640 /* WXTabView.m */; };
+		C602CEB81F70BA0900377640 /* WXTabTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEB71F70BA0900377640 /* WXTabTitleView.m */; };
+		C602CEBB1F70CF6600377640 /* WXTabItemBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEBA1F70CF6600377640 /* WXTabItemBaseView.m */; };
+		C602CEBE1F70E21A00377640 /* WXTabbedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEBD1F70E21A00377640 /* WXTabbedTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,15 @@
 		B2EC8BD21F6EACB7008AC27C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		C602CE821F6FA39B00377640 /* WXTabbedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabbedTableViewController.h; sourceTree = "<group>"; };
 		C602CE831F6FA39B00377640 /* WXTabbedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabbedTableViewController.m; sourceTree = "<group>"; };
+		C602CEB21F70B76100377640 /* WXTabTitleViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabTitleViewProtocol.h; sourceTree = "<group>"; };
+		C602CEB31F70B9FA00377640 /* WXTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabView.h; sourceTree = "<group>"; };
+		C602CEB41F70B9FA00377640 /* WXTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabView.m; sourceTree = "<group>"; };
+		C602CEB61F70BA0900377640 /* WXTabTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabTitleView.h; sourceTree = "<group>"; };
+		C602CEB71F70BA0900377640 /* WXTabTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabTitleView.m; sourceTree = "<group>"; };
+		C602CEB91F70CF6600377640 /* WXTabItemBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabItemBaseView.h; sourceTree = "<group>"; };
+		C602CEBA1F70CF6600377640 /* WXTabItemBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabItemBaseView.m; sourceTree = "<group>"; };
+		C602CEBC1F70E21A00377640 /* WXTabbedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabbedTableView.h; sourceTree = "<group>"; };
+		C602CEBD1F70E21A00377640 /* WXTabbedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabbedTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +111,15 @@
 			children = (
 				C602CE821F6FA39B00377640 /* WXTabbedTableViewController.h */,
 				C602CE831F6FA39B00377640 /* WXTabbedTableViewController.m */,
+				C602CEB21F70B76100377640 /* WXTabTitleViewProtocol.h */,
+				C602CEB31F70B9FA00377640 /* WXTabView.h */,
+				C602CEB41F70B9FA00377640 /* WXTabView.m */,
+				C602CEB61F70BA0900377640 /* WXTabTitleView.h */,
+				C602CEB71F70BA0900377640 /* WXTabTitleView.m */,
+				C602CEB91F70CF6600377640 /* WXTabItemBaseView.h */,
+				C602CEBA1F70CF6600377640 /* WXTabItemBaseView.m */,
+				C602CEBC1F70E21A00377640 /* WXTabbedTableView.h */,
+				C602CEBD1F70E21A00377640 /* WXTabbedTableView.m */,
 			);
 			path = TabbedTableViewController;
 			sourceTree = "<group>";
@@ -175,9 +197,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C602CE841F6FA39B00377640 /* WXTabbedTableViewController.m in Sources */,
+				C602CEBB1F70CF6600377640 /* WXTabItemBaseView.m in Sources */,
+				C602CEBE1F70E21A00377640 /* WXTabbedTableView.m in Sources */,
 				B2EC8BD11F6EACAA008AC27C /* ViewController.m in Sources */,
+				C602CEB81F70BA0900377640 /* WXTabTitleView.m in Sources */,
 				B2EC8BD31F6EACB7008AC27C /* main.m in Sources */,
 				B2EC8BCC1F6EACAA008AC27C /* AppDelegate.m in Sources */,
+				C602CEB51F70B9FA00377640 /* WXTabView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

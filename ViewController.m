@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WXTabbedTableViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -17,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title = @"根视图控制器";
+    self.title = @"测试用例";
 }
 
 
@@ -27,14 +28,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *caseTitles = @[@"没有Tab", @"2个Tab", @"3个Tab", @"自定义Tab视图"];
+    NSArray *caseTitles = @[@"直接使用ViewController", @"没有Tab", @"2个Tab", @"3个Tab", @"自定义Tab视图"];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cell" forIndexPath: indexPath];
     cell.textLabel.text = caseTitles[indexPath.row];
     return cell;
-    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath: indexPath animated: YES];
+    WXTabbedTableViewController *vc = [[WXTabbedTableViewController alloc] init];
+    [self.navigationController pushViewController: vc animated: YES];
 }
 @end
