@@ -11,6 +11,14 @@
 
 @interface WXTabTitleView : UIView <WXTabTitleViewProtocol>
 
+@property (strong, nonatomic) UIColor *selectedColor;
+@property (strong, nonatomic) UIColor *unselectedColor;
+@property (strong, nonatomic) UIFont *selectedFont;
+@property (strong, nonatomic) UIFont *unselectedFont;
+
+@property (strong, nonatomic) UIColor *indicatorColor;
+@property (strong, nonatomic) UIColor *bottomLineColor;
+
 - (instancetype)initWithTitles: (NSArray<NSString*> *)titles NS_DESIGNATED_INITIALIZER;
 
 @end

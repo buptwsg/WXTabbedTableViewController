@@ -32,6 +32,7 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
     self.tableView.delegate = self;
     self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview: self.tableView];
     [self.tableView registerClass: [UITableViewCell class] forCellReuseIdentifier: WXTabCellIdentifier];
 }
@@ -79,12 +80,17 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
 - (UIView<WXTabTitleViewProtocol> *)tabTitleView {
     if (nil == _defaultTitleView) {
         _defaultTitleView = [[WXTabTitleView alloc] initWithTitles: [self tabTitles]];
+        [self configDefaultTitleView];
     }
     return _defaultTitleView;
+}
+
+- (void)configDefaultTitleView {
 }
 
 - (WXTabItemBaseView*)itemViewAtIndex: (NSUInteger)index size: (CGSize)viewSize {
     return [[WXTabItemBaseView alloc] initWithIndex: index size: viewSize];
 }
+
 
 @end
