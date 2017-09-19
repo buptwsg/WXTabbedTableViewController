@@ -63,5 +63,8 @@
 #pragma mark - private
 - (void)handleScrollEnd {
     self.outerScrollView.scrollEnabled = YES;
+    NSUInteger tab = self.horizontalScrollView.contentOffset.x / self.horizontalScrollView.frame.size.width;
+    [self.titleView setSelectedItem: tab];
 }
+
 @end

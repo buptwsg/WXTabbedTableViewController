@@ -56,6 +56,7 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
 @property (strong, nonatomic) NSMutableArray<UIButton*> *titleButtonArray;
 @property (strong, nonatomic) UIView *indicatorLine;
 @property (strong, nonatomic) UIView *bottomLine;
+@property (nonatomic) NSUInteger selectedItem;
 
 @end
 
@@ -83,6 +84,7 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
         _indicatorColor = colorFromHex(@"161418");
         _bottomLineColor = colorFromHex(@"E1E1E1");
         _titleButtonArray = [[NSMutableArray alloc] init];
+        _selectedItem = 0;
         
         [self initSubviews];
     }
@@ -131,7 +133,7 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
     
     CGFloat indicatorWidth = buttonWidth * 0.85;
     CGFloat indicatorHeight = _indicatorLine.frame.size.height;
-    _indicatorLine.frame = CGRectMake((buttonWidth - indicatorWidth) / 2, self.frame.size.height - indicatorHeight, indicatorWidth, indicatorHeight);
+    _indicatorLine.frame = CGRectMake(self.titleButtonArray[self.selectedItem].center.x - 0.5 * indicatorWidth, self.frame.size.height - indicatorHeight, indicatorWidth, indicatorHeight);
     
     _bottomLine.frame = CGRectMake(0, self.frame.size.height - 0.5, self.frame.size.width, 0.5);
 }
@@ -163,11 +165,26 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
 
 #pragma mark - WXTabTitleViewProtocol
 - (void)setSelectedItem:(NSUInteger)item {
-    
+    if (_selectedItem != item) {
+        _selectedItem = item;
+        [self.titleButtonArray enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (idx == _selectedItem) {
+                [obj setTitleColor: [self selectedColor] forState: UIControlStateNormal];
+                obj.titleLabel.font = [self selectedFont];
+            }
+            else {
+                [obj setTitleColor: [self unselectedColor] forState: UIControlStateNormal];
+                obj.titleLabel.font = [self unselectedFont];
+            }
+        }];
+        
+        [self setNeedsLayout];
+    }
 }
 
 #pragma mark - Private Methods
 - (void)clickButton: (UIButton*)sender {
-    
+    NSUInteger tag = sender.tag;
+    [self setSelectedItem: tag];
 }
 @end
