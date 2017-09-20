@@ -23,6 +23,10 @@
     if (self) {
         _titleView = titleView;
         [self addSubview: _titleView];
+        __weak typeof(self) weakSelf = self;
+        _titleView.titleClickBlock = ^(NSUInteger index) {
+            weakSelf.horizontalScrollView.contentOffset = CGPointMake(frame.size.width * index, 0);
+        };
         
         CGFloat titleHeight = _titleView.frame.size.height;
         _horizontalScrollView = [[UIScrollView alloc] initWithFrame: CGRectMake(0, titleHeight, frame.size.width, frame.size.height - titleHeight)];

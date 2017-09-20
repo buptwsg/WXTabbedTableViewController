@@ -64,6 +64,7 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
 @synthesize tabTitles = _tabTitles;
 @synthesize titleClickBlock = _titleClickBlock;
 
+#pragma mark - Init
 - (instancetype)initWithFrame:(CGRect)frame {
     return [self initWithTitles: @[@"First", @"Second"]];
 }
@@ -141,26 +142,48 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
 #pragma mark - Accessor Methods
 - (void)setSelectedColor:(UIColor *)selectedColor {
     _selectedColor = selectedColor;
+    [self.titleButtonArray enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (idx == self.selectedItem) {
+            [obj setTitleColor: selectedColor forState: UIControlStateNormal];
+        }
+    }];
 }
 
 - (void)setUnselectedColor:(UIColor *)unselectedColor {
     _unselectedColor = unselectedColor;
+    [self.titleButtonArray enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (idx != self.selectedItem) {
+            [obj setTitleColor: unselectedColor forState: UIControlStateNormal];
+        }
+    }];
 }
 
 - (void)setSelectedFont:(UIFont *)selectedFont {
     _selectedFont = selectedFont;
+    [self.titleButtonArray enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (idx == self.selectedItem) {
+            obj.titleLabel.font = selectedFont;
+        }
+    }];
 }
 
 - (void)setUnselectedFont:(UIFont *)unselectedFont {
     _unselectedFont = unselectedFont;
+    [self.titleButtonArray enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (idx != self.selectedItem) {
+            obj.titleLabel.font = unselectedFont;
+        }
+    }];
 }
 
 - (void)setIndicatorColor:(UIColor *)indicatorColor {
     _indicatorColor = indicatorColor;
+    self.indicatorLine.backgroundColor = _indicatorColor;
 }
 
 - (void)setBottomLineColor:(UIColor *)bottomLineColor {
     _bottomLineColor = bottomLineColor;
+    self.bottomLine.backgroundColor = _bottomLineColor;
 }
 
 #pragma mark - WXTabTitleViewProtocol
@@ -186,5 +209,8 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
 - (void)clickButton: (UIButton*)sender {
     NSUInteger tag = sender.tag;
     [self setSelectedItem: tag];
+    if (self.titleClickBlock) {
+        self.titleClickBlock(tag);
+    }
 }
 @end
