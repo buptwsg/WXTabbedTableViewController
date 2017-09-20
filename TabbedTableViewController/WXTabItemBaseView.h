@@ -10,6 +10,8 @@
 
 @interface WXTabItemBaseView : UIView
 
+@property (strong, nonatomic) UIScrollView *scrollView;
+
 - (instancetype)initWithIndex: (NSUInteger)index size: (CGSize)viewSize;
 
 @end

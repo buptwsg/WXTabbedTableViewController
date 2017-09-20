@@ -19,6 +19,7 @@
 		C602CEB81F70BA0900377640 /* WXTabTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEB71F70BA0900377640 /* WXTabTitleView.m */; };
 		C602CEBB1F70CF6600377640 /* WXTabItemBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEBA1F70CF6600377640 /* WXTabItemBaseView.m */; };
 		C602CEBE1F70E21A00377640 /* WXTabbedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEBD1F70E21A00377640 /* WXTabbedTableView.m */; };
+		C637F4551F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = C637F4541F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		C602CEBA1F70CF6600377640 /* WXTabItemBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabItemBaseView.m; sourceTree = "<group>"; };
 		C602CEBC1F70E21A00377640 /* WXTabbedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabbedTableView.h; sourceTree = "<group>"; };
 		C602CEBD1F70E21A00377640 /* WXTabbedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabbedTableView.m; sourceTree = "<group>"; };
+		C637F4531F7257F400FF32BC /* WXTabbedTableViewControllerConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTabbedTableViewControllerConstant.h; sourceTree = "<group>"; };
+		C637F4541F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTabbedTableViewControllerConstant.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				C602CEBA1F70CF6600377640 /* WXTabItemBaseView.m */,
 				C602CEBC1F70E21A00377640 /* WXTabbedTableView.h */,
 				C602CEBD1F70E21A00377640 /* WXTabbedTableView.m */,
+				C637F4531F7257F400FF32BC /* WXTabbedTableViewControllerConstant.h */,
+				C637F4541F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m */,
 			);
 			path = TabbedTableViewController;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C637F4551F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m in Sources */,
 				C602CE841F6FA39B00377640 /* WXTabbedTableViewController.m in Sources */,
 				C602CEBB1F70CF6600377640 /* WXTabItemBaseView.m in Sources */,
 				C602CEBE1F70E21A00377640 /* WXTabbedTableView.m in Sources */,

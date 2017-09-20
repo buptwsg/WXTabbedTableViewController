@@ -92,5 +92,4 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
     return [[WXTabItemBaseView alloc] initWithIndex: index size: viewSize];
 }
 
-
 @end

@@ -29,6 +29,9 @@
         };
         
         CGFloat titleHeight = _titleView.frame.size.height;
+        if (_titleView.tabTitles.count < 2) {
+            titleHeight = 0; //If there is only one tab title, don't show title view
+        }
         _horizontalScrollView = [[UIScrollView alloc] initWithFrame: CGRectMake(0, titleHeight, frame.size.width, frame.size.height - titleHeight)];
         _horizontalScrollView.delegate = self;
         _horizontalScrollView.pagingEnabled = YES;
