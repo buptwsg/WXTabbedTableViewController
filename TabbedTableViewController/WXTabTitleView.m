@@ -8,38 +8,12 @@
 
 #import "WXTabTitleView.h"
 
-static UIColor * colorFromHex(NSString *hexColor) {
-    // String should be 6 or 7 characters if it includes '#'
-    if ([hexColor length]  < 6)
-        return ([UIColor redColor]);
-    
-    // strip # if it appears
-    if ([hexColor hasPrefix: @"#"])
-        hexColor = [hexColor substringFromIndex:1];
-    
-    // if the value isn't 6 characters at this point return
-    // the color black
-    int n = (int)[hexColor length];
-    if ((n != 6) && (n != 8))
-        return ([UIColor redColor]);
-    
-    // Separate into r, g, b substrings
-    NSString *strR, *strG, *strB, *strA;
-    strR = [hexColor substringWithRange:NSMakeRange(0, 2)];
-    strG = [hexColor substringWithRange:NSMakeRange(2, 2)];
-    strB = [hexColor substringWithRange:NSMakeRange(4, 2)];
-    strA = (n==8) ? [hexColor substringWithRange:NSMakeRange(6, 2)] : nil;
-    
-    // Scan values
-    unsigned r, g, b, a=255.f;
-    [[NSScanner scannerWithString:strR] scanHexInt:&r];
-    [[NSScanner scannerWithString:strG] scanHexInt:&g];
-    [[NSScanner scannerWithString:strB] scanHexInt:&b];
-    if (strA) {
-        [[NSScanner scannerWithString:strA] scanHexInt:&a];
-    }
-    
-    return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:((float) a / 255.0f)];
+static UIColor * colorFromHex(int hex) {
+    unsigned r, g, b;
+    r = (hex & 0xff0000) >> 16;
+    g = (hex & 0x00ff00) >> 8;
+    b = hex & 0x0000ff;
+    return [UIColor colorWithRed: 1.0*r/255 green: 1.0*g/255 blue: 1.0*b/255 alpha: 1];
 }
 
 static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
@@ -78,12 +52,12 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
     self = [super initWithFrame: CGRectMake(0, 0, screenSize.width, 44)];
     if (self) {
         _tabTitles = [titles copy];
-        _selectedColor = colorFromHex(@"161418");
-        _unselectedColor = colorFromHex(@"979393");
+        _selectedColor = colorFromHex(0x161418);
+        _unselectedColor = colorFromHex(0x979393);
         _selectedFont = fontFromNameAndSize(@"PingFangSC-Medium", 14);
         _unselectedFont = fontFromNameAndSize(@"PingFangSC-Regular", 14);
-        _indicatorColor = colorFromHex(@"161418");
-        _bottomLineColor = colorFromHex(@"E1E1E1");
+        _indicatorColor = colorFromHex(0x161418);
+        _bottomLineColor = colorFromHex(0xE1E1E1);
         _titleButtonArray = [[NSMutableArray alloc] init];
         _selectedItem = 0;
         
