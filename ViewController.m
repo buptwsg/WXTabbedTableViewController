@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "WXTabbedTableViewController.h"
+#import "TabbedTableViewControllerDemo1.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -40,7 +40,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath: indexPath animated: YES];
-    WXTabbedTableViewController *vc = [[WXTabbedTableViewController alloc] init];
+    WXTabbedTableViewController *vc = [[TabbedTableViewControllerDemo1 alloc] init];
     [self.navigationController pushViewController: vc animated: YES];
 }
 @end

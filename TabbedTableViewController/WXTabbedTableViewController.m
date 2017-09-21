@@ -7,25 +7,27 @@
 //
 
 #import "WXTabbedTableViewController.h"
-#import "WXTabTitleView.h"
-#import "WXTabView.h"
 #import "WXTabItemBaseView.h"
-#import "WXTabbedTableView.h"
+#import "WXTabbedTableViewControllerConstant.h"
 
 static NSString * const WXTabCellIdentifier = @"TabCell";
 
 @interface WXTabbedTableViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) WXTabView *tabView;
+@property (nonatomic) BOOL canScroll;
 
 @end
 
 @implementation WXTabbedTableViewController
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.automaticallyAdjustsScrollViewInsets = YES;
+    self.canScroll = YES;
     
     _tableView = [[WXTabbedTableView alloc] initWithFrame: [UIScreen mainScreen].bounds];
     self.tableView.dataSource = self;
@@ -35,6 +37,23 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview: self.tableView];
     [self.tableView registerClass: [UITableViewCell class] forCellReuseIdentifier: WXTabCellIdentifier];
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }
+    else {
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(acceptMessage:) name: WXTabTitleViewLeaveTopNotification object: nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear: animated];
+    [[NSNotificationCenter defaultCenter] removeObserver: self name: WXTabTitleViewLeaveTopNotification object: nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,10 +61,6 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
 }
 
 #pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
@@ -53,7 +68,7 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: WXTabCellIdentifier forIndexPath:indexPath];
     CGFloat height = [self tableView: tableView heightForRowAtIndexPath: indexPath];
-    self.tabView = [[WXTabView alloc] initWithFrame: CGRectMake(0, 0, self.tableView.frame.size.width, height) titleView: [self tabTitleView]];
+    _tabView = [[WXTabView alloc] initWithFrame: CGRectMake(0, 0, self.tableView.frame.size.width, height) titleView: [self tabTitleView]];
     self.tabView.outerScrollView = self.tableView;
     
     for (NSUInteger i = 0; i < [self tabTitles].count; i++) {
@@ -66,10 +81,43 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
 }
 
 #pragma mark - UITableViewDelegate
+- (UIEdgeInsets)tableViewContentInset {
+    UIEdgeInsets contentInset = UIEdgeInsetsZero;
+    if (@available(iOS 11.0, *)) {
+        contentInset = self.tableView.adjustedContentInset;
+    }
+    else {
+        contentInset = self.tableView.contentInset;
+    }
+    return contentInset;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    UIEdgeInsets contentInset = tableView.contentInset;
+    UIEdgeInsets contentInset = [self tableViewContentInset];
     return screenSize.height - contentInset.top - contentInset.bottom;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    //初始化的时候，就会被调用一次。如果没有表头的话，会认为已经到头，但这时子tab还没有被创建，无法接收通知。导致里外都不能滑动了。
+    if (scrollView != self.tableView) {
+        return;
+    }
+    
+    CGFloat maxOffsetY = [self.tableView rectForSection: 0].origin.y - [self tableViewContentInset].top;
+    CGFloat currentOffsetY = self.tableView.contentOffset.y;
+    if (!self.canScroll) {
+        self.tableView.contentOffset = CGPointMake(0, maxOffsetY);
+        return;
+    }
+    
+    if (currentOffsetY >= maxOffsetY) {
+        if (self.canScroll) {
+            [[NSNotificationCenter defaultCenter] postNotificationName: WXTabTitleViewArriveTopNotification object: nil];
+        }
+        self.canScroll = NO;
+        self.tableView.contentOffset = CGPointMake(0, maxOffsetY);
+    }
 }
 
 #pragma mark - Methods that subclass can override
@@ -90,6 +138,13 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
 
 - (WXTabItemBaseView*)itemViewAtIndex: (NSUInteger)index size: (CGSize)viewSize {
     return [[WXTabItemBaseView alloc] initWithIndex: index size: viewSize];
+}
+
+#pragma mark - Private Methods
+- (void)acceptMessage: (NSNotification*)notification {
+    if ([notification.name isEqualToString: WXTabTitleViewLeaveTopNotification]) {
+        self.canScroll = YES;
+    }
 }
 
 @end

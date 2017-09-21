@@ -20,6 +20,7 @@
 		C602CEBB1F70CF6600377640 /* WXTabItemBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEBA1F70CF6600377640 /* WXTabItemBaseView.m */; };
 		C602CEBE1F70E21A00377640 /* WXTabbedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEBD1F70E21A00377640 /* WXTabbedTableView.m */; };
 		C637F4551F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = C637F4541F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m */; };
+		C637F4A71F73AFF100FF32BC /* TabbedTableViewControllerDemo1.m in Sources */ = {isa = PBXBuildFile; fileRef = C637F4A61F73AFF100FF32BC /* TabbedTableViewControllerDemo1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		C602CEBD1F70E21A00377640 /* WXTabbedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabbedTableView.m; sourceTree = "<group>"; };
 		C637F4531F7257F400FF32BC /* WXTabbedTableViewControllerConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTabbedTableViewControllerConstant.h; sourceTree = "<group>"; };
 		C637F4541F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTabbedTableViewControllerConstant.m; sourceTree = "<group>"; };
+		C637F4A51F73AFF100FF32BC /* TabbedTableViewControllerDemo1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbedTableViewControllerDemo1.h; sourceTree = SOURCE_ROOT; };
+		C637F4A61F73AFF100FF32BC /* TabbedTableViewControllerDemo1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbedTableViewControllerDemo1.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				B2EC8BC91F6EACAA008AC27C /* Info.plist */,
 				B2EC8BCA1F6EACAA008AC27C /* ViewController.h */,
 				B2EC8BCB1F6EACAA008AC27C /* ViewController.m */,
+				C637F4A51F73AFF100FF32BC /* TabbedTableViewControllerDemo1.h */,
+				C637F4A61F73AFF100FF32BC /* TabbedTableViewControllerDemo1.m */,
 				B2EC8BA91F6EAB51008AC27C /* Supporting Files */,
 			);
 			name = Demo;
@@ -206,6 +211,7 @@
 				C602CEBB1F70CF6600377640 /* WXTabItemBaseView.m in Sources */,
 				C602CEBE1F70E21A00377640 /* WXTabbedTableView.m in Sources */,
 				B2EC8BD11F6EACAA008AC27C /* ViewController.m in Sources */,
+				C637F4A71F73AFF100FF32BC /* TabbedTableViewControllerDemo1.m in Sources */,
 				C602CEB81F70BA0900377640 /* WXTabTitleView.m in Sources */,
 				B2EC8BD31F6EACB7008AC27C /* main.m in Sources */,
 				B2EC8BCC1F6EACAA008AC27C /* AppDelegate.m in Sources */,
@@ -330,6 +336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cleanairgames.TabbedTableViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,6 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cleanairgames.TabbedTableViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";

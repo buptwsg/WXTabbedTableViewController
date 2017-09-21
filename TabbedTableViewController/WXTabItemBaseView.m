@@ -37,10 +37,6 @@
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 0;
 }
@@ -55,12 +51,20 @@
         return;
     }
     
+    UIEdgeInsets contentInset = UIEdgeInsetsZero;
+    if (@available(iOS 11.0, *)) {
+        contentInset = scrollView.safeAreaInsets;
+    }
+    else {
+        contentInset = scrollView.contentInset;
+    }
+    
     if (!self.canScroll) {
-        [scrollView setContentOffset: CGPointMake(0, -scrollView.contentInset.top)];
+        [scrollView setContentOffset: CGPointMake(0, -contentInset.top)];
     }
     CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY < 0) {
-        [[NSNotificationCenter defaultCenter] postNotificationName: WXTabTitleViewLeaveTopNotification object: nil userInfo: @{@"canScroll": @"1"}];
+    if (offsetY < -contentInset.top) {
+        [[NSNotificationCenter defaultCenter] postNotificationName: WXTabTitleViewLeaveTopNotification object: nil ];
     }
 }
 
@@ -78,12 +82,8 @@
 - (void)acceptMessage: (NSNotification*)notification {
     NSString *notificationName = notification.name;
     if ([notificationName isEqualToString: WXTabTitleViewArriveTopNotification]) {
-        NSDictionary *userInfo = notification.userInfo;
-        NSString *canScroll = userInfo[@"canScroll"];
-        if ([canScroll isEqualToString: @"1"]) {
-            self.canScroll = YES;
-            self.scrollView.showsVerticalScrollIndicator = YES;
-        }
+        self.canScroll = YES;
+        self.scrollView.showsVerticalScrollIndicator = YES;
     }
     else if ([notificationName isEqualToString: WXTabTitleViewLeaveTopNotification]){
         //when one of the tabs leaves top, others should also be reset to leave top.

@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class WXTabbedTableView;
-@class WXTabTitleView;
+#import "WXTabbedTableView.h"
+#import "WXTabTitleView.h"
+#import "WXTabView.h"
 
 @interface WXTabbedTableViewController : UIViewController
 
 @property (strong, nonatomic, readonly) WXTabbedTableView *tableView;
 @property (strong, nonatomic, readonly) WXTabTitleView *defaultTitleView;
+@property (strong, nonatomic, readonly) WXTabView *tabView;
 
 @end
