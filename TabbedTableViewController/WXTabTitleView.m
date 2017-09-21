@@ -140,6 +140,13 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
 }
 
 #pragma mark - Accessor Methods
+- (void)setTabTitles:(NSArray<NSString *> *)tabTitles {
+    _tabTitles = [tabTitles copy];
+    [_tabTitles enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [_titleButtonArray[idx] setTitle: obj forState: UIControlStateNormal];
+    }];
+}
+
 - (void)setSelectedColor:(UIColor *)selectedColor {
     _selectedColor = selectedColor;
     [self.titleButtonArray enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

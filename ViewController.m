@@ -28,11 +28,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 6;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *caseTitles = @[@"直接使用ViewController", @"没有Tab", @"2个Tab", @"3个Tab", @"自定义Tab视图"];
+    NSArray *caseTitles = @[@"直接使用ViewController", @"没有Tab", @"2个Tab", @"3个Tab", @"Collection View in TabItemView", @"自定义Tab视图"];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cell" forIndexPath: indexPath];
     cell.textLabel.text = caseTitles[indexPath.row];
     return cell;
