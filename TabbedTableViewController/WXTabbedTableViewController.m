@@ -69,12 +69,13 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: WXTabCellIdentifier forIndexPath:indexPath];
     if (nil == self.tabView) {
         CGFloat height = [self tableView: tableView heightForRowAtIndexPath: indexPath];
-        _tabView = [[WXTabView alloc] initWithFrame: CGRectMake(0, 0, self.tableView.frame.size.width, height) titleView: [self tabTitleView]];
+        UIView<WXTabTitleViewProtocol> *tabTitleView = [self tabTitleView];
+        _tabView = [[WXTabView alloc] initWithFrame: CGRectMake(0, 0, self.tableView.frame.size.width, height) titleView: tabTitleView];
         self.tabView.outerScrollView = self.tableView;
         
         NSUInteger titleCount = [self tabTitles].count;
         for (NSUInteger i = 0; i < titleCount; i++) {
-            WXTabItemBaseView *itemView = [self itemViewAtIndex: i size: CGSizeMake(self.tableView.frame.size.width, height - [self tabTitleView].frame.size.height)];
+            WXTabItemBaseView *itemView = [self itemViewAtIndex: i size: CGSizeMake(self.tableView.frame.size.width, height - tabTitleView.frame.size.height)];
             [self.tabView addItemView: itemView];
         }
     }

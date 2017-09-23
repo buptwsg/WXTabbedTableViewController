@@ -11,6 +11,7 @@
 #import "TabbedTableViewControllerDemo2.h"
 #import "TabbedTableViewControllerDemo3.h"
 #import "TabbedTableViewControllerDemo4.h"
+#import "TabbedTableViewControllerDemo5.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -65,6 +66,12 @@
             
         case 3: {
             UIViewController *vc = [[TabbedTableViewControllerDemo4 alloc] init];
+            [self.navigationController pushViewController: vc animated: YES];
+        }
+            break;
+            
+        case 4: {
+            UIViewController *vc = [[TabbedTableViewControllerDemo5 alloc] init];
             [self.navigationController pushViewController: vc animated: YES];
         }
             break;
