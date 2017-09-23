@@ -99,8 +99,12 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    //初始化的时候，就会被调用一次。如果没有表头的话，会认为已经到头，但这时子tab还没有被创建，无法接收通知。导致里外都不能滑动了。
     if (scrollView != self.tableView) {
+        return;
+    }
+    
+    //if this method is called before the only cell is created, ignore.
+    if (!self.tabView) {
         return;
     }
     
