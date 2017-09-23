@@ -9,7 +9,7 @@
 #import "WXTabItemBaseView.h"
 #import "WXTabbedTableViewControllerConstant.h"
 
-@interface WXTabItemBaseView() <UITableViewDataSource, UITableViewDelegate>
+@interface WXTabItemBaseView()
 
 @property (nonatomic) BOOL canScroll;
 

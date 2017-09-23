@@ -18,4 +18,12 @@
 @property (strong, nonatomic, readonly) WXTabTitleView *defaultTitleView;
 @property (strong, nonatomic, readonly) WXTabView *tabView;
 
+- (NSArray<NSString *> *)tabTitles;
+
+- (UIView<WXTabTitleViewProtocol> *)tabTitleView;
+
+- (void)configDefaultTitleView;
+
+- (WXTabItemBaseView*)itemViewAtIndex: (NSUInteger)index size: (CGSize)viewSize;
+
 @end

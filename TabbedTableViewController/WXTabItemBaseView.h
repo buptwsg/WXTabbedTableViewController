@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WXTabItemBaseView : UIView
+@interface WXTabItemBaseView : UIView <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 

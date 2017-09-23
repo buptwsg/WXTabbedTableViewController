@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "TabbedTableViewControllerDemo1.h"
+#import "TabbedTableViewControllerDemo2.h"
+#import "TabbedTableViewControllerDemo3.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -28,11 +30,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    return 5;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *caseTitles = @[@"直接使用ViewController", @"没有Tab", @"2个Tab", @"3个Tab", @"Collection View in TabItemView", @"自定义Tab视图"];
+    NSArray *caseTitles = @[@"直接使用ViewController", @"没有Tab", @"3个Tab", @"Collection View in TabItemView", @"自定义Tab视图"];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cell" forIndexPath: indexPath];
     cell.textLabel.text = caseTitles[indexPath.row];
     return cell;
@@ -40,7 +42,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath: indexPath animated: YES];
-    WXTabbedTableViewController *vc = [[TabbedTableViewControllerDemo1 alloc] init];
-    [self.navigationController pushViewController: vc animated: YES];
+    switch (indexPath.row) {
+        case 0:
+        {
+            WXTabbedTableViewController *vc = [[TabbedTableViewControllerDemo1 alloc] init];
+            [self.navigationController pushViewController: vc animated: YES];
+        }
+            break;
+            
+        case 1:
+        {
+            WXTabbedTableViewController *vc = [[TabbedTableViewControllerDemo2 alloc] init];
+            [self.navigationController pushViewController: vc animated: YES];
+        }
+            break;
+            
+        case 2: {
+            UIViewController *vc = [[TabbedTableViewControllerDemo3 alloc] init];
+            [self.navigationController pushViewController: vc animated: YES];
+        }
+        default:
+            break;
+    }
 }
 @end

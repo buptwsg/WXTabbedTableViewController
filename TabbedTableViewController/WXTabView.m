@@ -28,10 +28,12 @@
             weakSelf.horizontalScrollView.contentOffset = CGPointMake(frame.size.width * index, 0);
         };
         
-        CGFloat titleHeight = _titleView.frame.size.height;
+        //If there is less than two tab titles, don't show title view
         if (_titleView.tabTitles.count < 2) {
-            titleHeight = 0; //If there is only one tab title, don't show title view
+            _titleView.frame = CGRectZero;
+            _titleView.hidden = YES;
         }
+        CGFloat titleHeight = _titleView.frame.size.height;
         _horizontalScrollView = [[UIScrollView alloc] initWithFrame: CGRectMake(0, titleHeight, frame.size.width, frame.size.height - titleHeight)];
         _horizontalScrollView.delegate = self;
         _horizontalScrollView.pagingEnabled = YES;
