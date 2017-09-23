@@ -17,6 +17,8 @@
 @property (strong, nonatomic) UIFont *unselectedFont;
 
 @property (strong, nonatomic) UIColor *indicatorColor;
+@property (nonatomic) BOOL indicatorWidthEqualToTitle;
+@property (nonatomic) CGFloat indicatorHeight;
 @property (strong, nonatomic) UIColor *bottomLineColor;
 
 - (instancetype)initWithTitles: (NSArray<NSString*> *)titles NS_DESIGNATED_INITIALIZER;

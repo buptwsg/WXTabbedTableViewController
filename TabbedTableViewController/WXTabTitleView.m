@@ -57,6 +57,8 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
         _selectedFont = fontFromNameAndSize(@"PingFangSC-Medium", 14);
         _unselectedFont = fontFromNameAndSize(@"PingFangSC-Regular", 14);
         _indicatorColor = colorFromHex(0x161418);
+        _indicatorWidthEqualToTitle = YES;
+        _indicatorHeight = 2;
         _bottomLineColor = colorFromHex(0xE1E1E1);
         _titleButtonArray = [[NSMutableArray alloc] init];
         _selectedItem = 0;
@@ -88,9 +90,9 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
         [_titleButtonArray addObject: button];
     }
     
-    _indicatorLine = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 0, 2)];
+    _indicatorLine = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 0, _indicatorHeight)];
     _indicatorLine.backgroundColor = [self indicatorColor];
-    _indicatorLine.layer.cornerRadius = _indicatorLine.frame.size.height / 2;
+    _indicatorLine.layer.cornerRadius = _indicatorHeight / 2;
     [self addSubview:_indicatorLine];
     
     _bottomLine = [[UIView alloc] initWithFrame: CGRectZero];
@@ -106,9 +108,15 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
         button.frame = CGRectMake(buttonWidth * button.tag, 0, buttonWidth, self.frame.size.height);
     }
     
-    CGFloat indicatorWidth = buttonWidth * 0.85;
-    CGFloat indicatorHeight = _indicatorLine.frame.size.height;
-    _indicatorLine.frame = CGRectMake(self.titleButtonArray[self.selectedItem].center.x - 0.5 * indicatorWidth, self.frame.size.height - indicatorHeight, indicatorWidth, indicatorHeight);
+    CGFloat indicatorWidth = 0;
+    if (self.indicatorWidthEqualToTitle) {
+        indicatorWidth = [self.titleButtonArray[self.selectedItem].titleLabel intrinsicContentSize].width;
+    }
+    else {
+        indicatorWidth = buttonWidth * 0.85;
+    }
+    
+    _indicatorLine.frame = CGRectMake(self.titleButtonArray[self.selectedItem].center.x - 0.5 * indicatorWidth, self.frame.size.height - self.indicatorHeight, indicatorWidth, self.indicatorHeight);
     
     _bottomLine.frame = CGRectMake(0, self.frame.size.height - 0.5, self.frame.size.width, 0.5);
 }
@@ -160,6 +168,17 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
 - (void)setIndicatorColor:(UIColor *)indicatorColor {
     _indicatorColor = indicatorColor;
     self.indicatorLine.backgroundColor = _indicatorColor;
+}
+
+- (void)setIndicatorWidthEqualToTitle:(BOOL)indicatorWidthEqualToTitle {
+    _indicatorWidthEqualToTitle = indicatorWidthEqualToTitle;
+    [self setNeedsLayout];
+}
+
+- (void)setIndicatorHeight:(CGFloat)indicatorHeight {
+    _indicatorHeight = indicatorHeight;
+    self.indicatorLine.layer.cornerRadius = self.indicatorHeight / 2;
+    [self setNeedsLayout];
 }
 
 - (void)setBottomLineColor:(UIColor *)bottomLineColor {
