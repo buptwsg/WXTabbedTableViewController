@@ -10,8 +10,8 @@
 		B2851DAC1F76758E000CD8D4 /* TabbedTableViewControllerDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = B2851DAB1F76758E000CD8D4 /* TabbedTableViewControllerDemo2.m */; };
 		B2851DAF1F767733000CD8D4 /* ItemViewDemo1.m in Sources */ = {isa = PBXBuildFile; fileRef = B2851DAE1F767733000CD8D4 /* ItemViewDemo1.m */; };
 		B2851DB21F767764000CD8D4 /* ItemViewDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = B2851DB11F767764000CD8D4 /* ItemViewDemo2.m */; };
-		B2851DB51F767774000CD8D4 /* ItemViewDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = B2851DB41F767774000CD8D4 /* ItemViewDemo3.m */; };
 		B2851DB81F767C23000CD8D4 /* TabbedTableViewControllerDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = B2851DB71F767C23000CD8D4 /* TabbedTableViewControllerDemo3.m */; };
+		B2851DBB1F767FBD000CD8D4 /* ItemViewDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = B2851DBA1F767FBD000CD8D4 /* ItemViewDemo3.m */; };
 		B2EC8BCC1F6EACAA008AC27C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC8BC21F6EACAA008AC27C /* AppDelegate.m */; };
 		B2EC8BCD1F6EACAA008AC27C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2EC8BC31F6EACAA008AC27C /* Assets.xcassets */; };
 		B2EC8BCE1F6EACAA008AC27C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EC8BC51F6EACAA008AC27C /* LaunchScreen.storyboard */; };
@@ -34,10 +34,10 @@
 		B2851DAE1F767733000CD8D4 /* ItemViewDemo1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemViewDemo1.m; sourceTree = SOURCE_ROOT; };
 		B2851DB01F767764000CD8D4 /* ItemViewDemo2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemViewDemo2.h; sourceTree = SOURCE_ROOT; };
 		B2851DB11F767764000CD8D4 /* ItemViewDemo2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemViewDemo2.m; sourceTree = SOURCE_ROOT; };
-		B2851DB31F767774000CD8D4 /* ItemViewDemo3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemViewDemo3.h; sourceTree = "<group>"; };
-		B2851DB41F767774000CD8D4 /* ItemViewDemo3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemViewDemo3.m; sourceTree = "<group>"; };
 		B2851DB61F767C23000CD8D4 /* TabbedTableViewControllerDemo3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbedTableViewControllerDemo3.h; sourceTree = SOURCE_ROOT; };
 		B2851DB71F767C23000CD8D4 /* TabbedTableViewControllerDemo3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbedTableViewControllerDemo3.m; sourceTree = SOURCE_ROOT; };
+		B2851DB91F767FBD000CD8D4 /* ItemViewDemo3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewDemo3.h; sourceTree = SOURCE_ROOT; };
+		B2851DBA1F767FBD000CD8D4 /* ItemViewDemo3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewDemo3.m; sourceTree = SOURCE_ROOT; };
 		B2EC8BA61F6EAB51008AC27C /* TabbedTableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbedTableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2EC8BC11F6EACAA008AC27C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		B2EC8BC21F6EACAA008AC27C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
@@ -113,8 +113,8 @@
 				B2851DAE1F767733000CD8D4 /* ItemViewDemo1.m */,
 				B2851DB01F767764000CD8D4 /* ItemViewDemo2.h */,
 				B2851DB11F767764000CD8D4 /* ItemViewDemo2.m */,
-				B2851DB31F767774000CD8D4 /* ItemViewDemo3.h */,
-				B2851DB41F767774000CD8D4 /* ItemViewDemo3.m */,
+				B2851DB91F767FBD000CD8D4 /* ItemViewDemo3.h */,
+				B2851DBA1F767FBD000CD8D4 /* ItemViewDemo3.m */,
 				B2EC8BA91F6EAB51008AC27C /* Supporting Files */,
 			);
 			name = Demo;
@@ -242,8 +242,8 @@
 				C602CEB81F70BA0900377640 /* WXTabTitleView.m in Sources */,
 				B2EC8BD31F6EACB7008AC27C /* main.m in Sources */,
 				B2EC8BCC1F6EACAA008AC27C /* AppDelegate.m in Sources */,
-				B2851DB51F767774000CD8D4 /* ItemViewDemo3.m in Sources */,
 				C602CEB51F70B9FA00377640 /* WXTabView.m in Sources */,
+				B2851DBB1F767FBD000CD8D4 /* ItemViewDemo3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
