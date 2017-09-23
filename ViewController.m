@@ -10,6 +10,7 @@
 #import "TabbedTableViewControllerDemo1.h"
 #import "TabbedTableViewControllerDemo2.h"
 #import "TabbedTableViewControllerDemo3.h"
+#import "TabbedTableViewControllerDemo4.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -22,7 +23,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"Test Cases";
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -61,6 +61,14 @@
             UIViewController *vc = [[TabbedTableViewControllerDemo3 alloc] init];
             [self.navigationController pushViewController: vc animated: YES];
         }
+            break;
+            
+        case 3: {
+            UIViewController *vc = [[TabbedTableViewControllerDemo4 alloc] init];
+            [self.navigationController pushViewController: vc animated: YES];
+        }
+            break;
+            
         default:
             break;
     }

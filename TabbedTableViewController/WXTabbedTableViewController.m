@@ -67,13 +67,16 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: WXTabCellIdentifier forIndexPath:indexPath];
-    CGFloat height = [self tableView: tableView heightForRowAtIndexPath: indexPath];
-    _tabView = [[WXTabView alloc] initWithFrame: CGRectMake(0, 0, self.tableView.frame.size.width, height) titleView: [self tabTitleView]];
-    self.tabView.outerScrollView = self.tableView;
-    
-    for (NSUInteger i = 0; i < [self tabTitles].count; i++) {
-        WXTabItemBaseView *itemView = [self itemViewAtIndex: i size: CGSizeMake(self.tableView.frame.size.width, height - [self tabTitleView].frame.size.height)];
-        [self.tabView addItemView: itemView];
+    if (nil == self.tabView) {
+        CGFloat height = [self tableView: tableView heightForRowAtIndexPath: indexPath];
+        _tabView = [[WXTabView alloc] initWithFrame: CGRectMake(0, 0, self.tableView.frame.size.width, height) titleView: [self tabTitleView]];
+        self.tabView.outerScrollView = self.tableView;
+        
+        NSUInteger titleCount = [self tabTitles].count;
+        for (NSUInteger i = 0; i < titleCount; i++) {
+            WXTabItemBaseView *itemView = [self itemViewAtIndex: i size: CGSizeMake(self.tableView.frame.size.width, height - [self tabTitleView].frame.size.height)];
+            [self.tabView addItemView: itemView];
+        }
     }
     [cell.contentView addSubview: self.tabView];
     

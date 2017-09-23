@@ -12,6 +12,8 @@
 		B2851DB21F767764000CD8D4 /* ItemViewDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = B2851DB11F767764000CD8D4 /* ItemViewDemo2.m */; };
 		B2851DB81F767C23000CD8D4 /* TabbedTableViewControllerDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = B2851DB71F767C23000CD8D4 /* TabbedTableViewControllerDemo3.m */; };
 		B2851DBB1F767FBD000CD8D4 /* ItemViewDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = B2851DBA1F767FBD000CD8D4 /* ItemViewDemo3.m */; };
+		B2851DBE1F7683E5000CD8D4 /* ItemViewDemo4_CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2851DBD1F7683E5000CD8D4 /* ItemViewDemo4_CollectionView.m */; };
+		B2851DC11F768875000CD8D4 /* TabbedTableViewControllerDemo4.m in Sources */ = {isa = PBXBuildFile; fileRef = B2851DC01F768875000CD8D4 /* TabbedTableViewControllerDemo4.m */; };
 		B2EC8BCC1F6EACAA008AC27C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC8BC21F6EACAA008AC27C /* AppDelegate.m */; };
 		B2EC8BCD1F6EACAA008AC27C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2EC8BC31F6EACAA008AC27C /* Assets.xcassets */; };
 		B2EC8BCE1F6EACAA008AC27C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EC8BC51F6EACAA008AC27C /* LaunchScreen.storyboard */; };
@@ -38,6 +40,10 @@
 		B2851DB71F767C23000CD8D4 /* TabbedTableViewControllerDemo3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbedTableViewControllerDemo3.m; sourceTree = SOURCE_ROOT; };
 		B2851DB91F767FBD000CD8D4 /* ItemViewDemo3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewDemo3.h; sourceTree = SOURCE_ROOT; };
 		B2851DBA1F767FBD000CD8D4 /* ItemViewDemo3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewDemo3.m; sourceTree = SOURCE_ROOT; };
+		B2851DBC1F7683E5000CD8D4 /* ItemViewDemo4_CollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemViewDemo4_CollectionView.h; sourceTree = SOURCE_ROOT; };
+		B2851DBD1F7683E5000CD8D4 /* ItemViewDemo4_CollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemViewDemo4_CollectionView.m; sourceTree = SOURCE_ROOT; };
+		B2851DBF1F768875000CD8D4 /* TabbedTableViewControllerDemo4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbedTableViewControllerDemo4.h; sourceTree = SOURCE_ROOT; };
+		B2851DC01F768875000CD8D4 /* TabbedTableViewControllerDemo4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbedTableViewControllerDemo4.m; sourceTree = SOURCE_ROOT; };
 		B2EC8BA61F6EAB51008AC27C /* TabbedTableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbedTableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2EC8BC11F6EACAA008AC27C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		B2EC8BC21F6EACAA008AC27C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
@@ -109,12 +115,16 @@
 				B2851DAB1F76758E000CD8D4 /* TabbedTableViewControllerDemo2.m */,
 				B2851DB61F767C23000CD8D4 /* TabbedTableViewControllerDemo3.h */,
 				B2851DB71F767C23000CD8D4 /* TabbedTableViewControllerDemo3.m */,
+				B2851DBF1F768875000CD8D4 /* TabbedTableViewControllerDemo4.h */,
+				B2851DC01F768875000CD8D4 /* TabbedTableViewControllerDemo4.m */,
 				B2851DAD1F767733000CD8D4 /* ItemViewDemo1.h */,
 				B2851DAE1F767733000CD8D4 /* ItemViewDemo1.m */,
 				B2851DB01F767764000CD8D4 /* ItemViewDemo2.h */,
 				B2851DB11F767764000CD8D4 /* ItemViewDemo2.m */,
 				B2851DB91F767FBD000CD8D4 /* ItemViewDemo3.h */,
 				B2851DBA1F767FBD000CD8D4 /* ItemViewDemo3.m */,
+				B2851DBC1F7683E5000CD8D4 /* ItemViewDemo4_CollectionView.h */,
+				B2851DBD1F7683E5000CD8D4 /* ItemViewDemo4_CollectionView.m */,
 				B2EC8BA91F6EAB51008AC27C /* Supporting Files */,
 			);
 			name = Demo;
@@ -229,8 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2851DC11F768875000CD8D4 /* TabbedTableViewControllerDemo4.m in Sources */,
 				C637F4551F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m in Sources */,
 				B2851DAC1F76758E000CD8D4 /* TabbedTableViewControllerDemo2.m in Sources */,
+				B2851DBE1F7683E5000CD8D4 /* ItemViewDemo4_CollectionView.m in Sources */,
 				B2851DAF1F767733000CD8D4 /* ItemViewDemo1.m in Sources */,
 				C602CE841F6FA39B00377640 /* WXTabbedTableViewController.m in Sources */,
 				C602CEBB1F70CF6600377640 /* WXTabItemBaseView.m in Sources */,
