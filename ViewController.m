@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title = @"测试用例";
+    self.title = @"Test Cases";
 }
 
 
@@ -34,7 +34,7 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *caseTitles = @[@"直接使用ViewController", @"没有Tab", @"3个Tab", @"Collection View in TabItemView", @"自定义Tab视图"];
+    NSArray *caseTitles = @[@"Use the view controller as is", @"No Tab", @"Three Tabs", @"Collection view in TabItemView", @"Self defined Tab title view"];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cell" forIndexPath: indexPath];
     cell.textLabel.text = caseTitles[indexPath.row];
     return cell;
