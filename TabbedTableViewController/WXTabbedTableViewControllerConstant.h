@@ -8,5 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, WXTabItemViewAppearReason) {
+    WXTabItemViewAppearByViewController,
+    WXTabItemViewAppearByChangingTab
+};
+
+typedef NS_ENUM(NSInteger, WXTabItemViewDisappearReason) {
+    WXTabItemViewDisappearByViewController,
+    WXTabItemViewDisappearByChangingTab
+};
+
 extern NSString * const WXTabTitleViewArriveTopNotification;
 extern NSString * const WXTabTitleViewLeaveTopNotification;

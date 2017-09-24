@@ -19,4 +19,8 @@
 
 - (void)addItemView: (WXTabItemBaseView*)itemView;
 
+- (void)viewWillAppear;
+
+- (void)viewWillDisappear;
+
 @end

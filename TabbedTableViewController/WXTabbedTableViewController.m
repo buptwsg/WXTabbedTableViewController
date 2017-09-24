@@ -49,11 +49,13 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(acceptMessage:) name: WXTabTitleViewLeaveTopNotification object: nil];
+    [self.tabView viewWillAppear];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear: animated];
     [[NSNotificationCenter defaultCenter] removeObserver: self name: WXTabTitleViewLeaveTopNotification object: nil];
+    [self.tabView viewWillDisappear];
 }
 
 - (void)didReceiveMemoryWarning {

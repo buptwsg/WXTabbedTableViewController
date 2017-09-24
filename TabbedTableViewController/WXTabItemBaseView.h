@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WXTabbedTableViewControllerConstant.h"
 
 @interface WXTabItemBaseView : UIView <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 
 - (instancetype)initWithIndex: (NSUInteger)index size: (CGSize)viewSize;
+
+- (void)viewWillAppear: (WXTabItemViewAppearReason)reason;
+
+- (void)viewWillDisappear: (WXTabItemViewDisappearReason)reason;
 
 @end

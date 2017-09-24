@@ -210,7 +210,7 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
     NSUInteger tag = sender.tag;
     NSUInteger oldSelectedItem = self.selectedItem;
     [self setSelectedItem: tag];
-    if (self.titleClickBlock) {
+    if (self.titleClickBlock && tag != oldSelectedItem) {
         self.titleClickBlock(tag, oldSelectedItem);
     }
 }

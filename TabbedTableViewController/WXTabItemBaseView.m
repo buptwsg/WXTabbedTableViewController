@@ -7,7 +7,6 @@
 //
 
 #import "WXTabItemBaseView.h"
-#import "WXTabbedTableViewControllerConstant.h"
 
 @interface WXTabItemBaseView()
 
@@ -35,6 +34,19 @@
     }
     
     return self;
+}
+
+#pragma mark - public methods
+- (void)viewWillAppear:(WXTabItemViewAppearReason)reason {
+    if (reason == WXTabItemViewAppearByViewController) {
+        [self startAcceptMessages];
+    }
+}
+
+- (void)viewWillDisappear:(WXTabItemViewDisappearReason)reason {
+    if (reason == WXTabItemViewDisappearByViewController) {
+        [self stopAcceptMessages];
+    }
 }
 
 #pragma mark - UITableViewDataSource
