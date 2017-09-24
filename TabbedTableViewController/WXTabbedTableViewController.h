@@ -17,6 +17,7 @@
 @property (strong, nonatomic, readonly) WXTabbedTableView *tableView;
 @property (strong, nonatomic, readonly) WXTabTitleView *defaultTitleView;
 @property (strong, nonatomic, readonly) WXTabView *tabView;
+@property (nonatomic, readonly) CGFloat tableViewMaxOffsetY;
 
 - (NSArray<NSString *> *)tabTitles;
 

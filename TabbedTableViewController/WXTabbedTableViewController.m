@@ -62,6 +62,11 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - public methods
+- (CGFloat)tableViewMaxOffsetY {
+    return [self.tableView rectForSection: 0].origin.y - [self tableViewContentInset].top;
+}
+
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
@@ -114,7 +119,7 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
         return;
     }
     
-    CGFloat maxOffsetY = [self.tableView rectForSection: 0].origin.y - [self tableViewContentInset].top;
+    CGFloat maxOffsetY = self.tableViewMaxOffsetY;
     CGFloat currentOffsetY = self.tableView.contentOffset.y;
     if (!self.canScroll) {
         self.tableView.contentOffset = CGPointMake(0, maxOffsetY);
