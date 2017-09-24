@@ -19,6 +19,16 @@
     return self;
 }
 
+- (void)viewWillAppear:(WXTabItemViewAppearReason)reason {
+    [super viewWillAppear: reason];
+    NSLog(@"Demo 2, view will appear, reason = %ld", reason);
+}
+
+- (void)viewWillDisappear:(WXTabItemViewDisappearReason)reason {
+    [super viewWillDisappear: reason];
+    NSLog(@"Demo 2, view will disappear, reason = %ld", reason);
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 30;
 }
