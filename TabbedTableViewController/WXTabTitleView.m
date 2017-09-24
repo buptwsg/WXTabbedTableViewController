@@ -30,13 +30,13 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
 @property (strong, nonatomic) NSMutableArray<UIButton*> *titleButtonArray;
 @property (strong, nonatomic) UIView *indicatorLine;
 @property (strong, nonatomic) UIView *bottomLine;
-@property (nonatomic) NSUInteger selectedItem;
 
 @end
 
 @implementation WXTabTitleView
 @synthesize tabTitles = _tabTitles;
 @synthesize titleClickBlock = _titleClickBlock;
+@synthesize selectedItem = _selectedItem;
 
 #pragma mark - Init
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -208,9 +208,10 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
 #pragma mark - Private Methods
 - (void)clickButton: (UIButton*)sender {
     NSUInteger tag = sender.tag;
+    NSUInteger oldSelectedItem = self.selectedItem;
     [self setSelectedItem: tag];
     if (self.titleClickBlock) {
-        self.titleClickBlock(tag);
+        self.titleClickBlock(tag, oldSelectedItem);
     }
 }
 @end

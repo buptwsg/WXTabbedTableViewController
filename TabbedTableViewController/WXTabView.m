@@ -24,8 +24,8 @@
         _titleView = titleView;
         [self addSubview: _titleView];
         __weak typeof(self) weakSelf = self;
-        _titleView.titleClickBlock = ^(NSUInteger index) {
-            weakSelf.horizontalScrollView.contentOffset = CGPointMake(frame.size.width * index, 0);
+        _titleView.titleClickBlock = ^(NSUInteger newIndex, NSUInteger oldIndex) {
+            weakSelf.horizontalScrollView.contentOffset = CGPointMake(frame.size.width * newIndex, 0);
         };
         
         //If there is less than two tab titles, don't show title view

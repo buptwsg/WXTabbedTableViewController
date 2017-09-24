@@ -27,6 +27,7 @@
         UITableView *tableView = [[UITableView alloc] initWithFrame: self.bounds];
         tableView.dataSource = self;
         tableView.delegate = self;
+        tableView.showsHorizontalScrollIndicator = NO;
         [self addSubview: tableView];
         
         self.scrollView = tableView;

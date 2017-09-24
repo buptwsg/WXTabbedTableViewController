@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^WXTabTitleClickBlock)(NSUInteger index);
+typedef void (^WXTabTitleClickBlock)(NSUInteger newIndex, NSUInteger oldIndex);
 
 @protocol WXTabTitleViewProtocol <NSObject>
 
 @property (copy, nonatomic) NSArray<NSString*> *tabTitles;
 @property (copy, nonatomic) WXTabTitleClickBlock titleClickBlock;
-
-- (void)setSelectedItem: (NSUInteger)item;
+@property (nonatomic) NSUInteger selectedItem;
 
 @end

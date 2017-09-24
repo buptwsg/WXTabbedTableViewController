@@ -16,6 +16,7 @@
 
 @synthesize tabTitles = _tabTitles;
 @synthesize titleClickBlock = _titleClickBlock;
+@synthesize selectedItem = _selectedItem;
 
 - (instancetype)initWithTitles: (NSArray<NSString*> *)titles {
     self = [super initWithFrame: CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 100)];
@@ -58,9 +59,10 @@
 
 - (void)buttonClicked: (UIButton*)sender {
     NSUInteger tag = sender.tag;
+    NSUInteger oldSelectedItem = self.selectedItem;
     [self setSelectedItem: tag];
     if (self.titleClickBlock) {
-        self.titleClickBlock(tag);
+        self.titleClickBlock(tag, oldSelectedItem);
     }
 }
 @end
