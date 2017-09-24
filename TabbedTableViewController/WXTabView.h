@@ -11,6 +11,9 @@
 
 @class WXTabItemBaseView;
 
+/**
+ An internal view class, users should not care about it.
+ */
 @interface WXTabView : UIView
 
 @property (weak, nonatomic) UIScrollView *outerScrollView;

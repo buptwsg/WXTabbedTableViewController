@@ -14,6 +14,7 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
 
 @interface WXTabbedTableViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic, readonly) WXTabView *tabView;
 @property (nonatomic) BOOL canScroll;
 
 @end
