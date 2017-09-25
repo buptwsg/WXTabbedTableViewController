@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- This is the base class which you should subclass your tab item view from. By default, it creates a table view to display data, but you can alternatively uses a
+ This is the base class from which you should subclass your tab item view. By default, it creates a table view to display data, but you can alternatively uses a
  collection view.
  */
 @interface WXTabItemBaseView : UIView <UITableViewDataSource, UITableViewDelegate>
