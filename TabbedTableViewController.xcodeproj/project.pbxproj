@@ -12,7 +12,6 @@
 		B236EE4F1F77B3AA004AB7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B236EE311F77B3AA004AB7CD /* LaunchScreen.storyboard */; };
 		B236EE501F77B3AA004AB7CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B236EE331F77B3AA004AB7CD /* Main.storyboard */; };
 		B236EE511F77B3AA004AB7CD /* CustomTabTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B236EE361F77B3AA004AB7CD /* CustomTabTitleView.m */; };
-		B236EE521F77B3AA004AB7CD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B236EE371F77B3AA004AB7CD /* Info.plist */; };
 		B236EE531F77B3AA004AB7CD /* ItemViewDemo1.m in Sources */ = {isa = PBXBuildFile; fileRef = B236EE391F77B3AA004AB7CD /* ItemViewDemo1.m */; };
 		B236EE541F77B3AA004AB7CD /* ItemViewDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = B236EE3B1F77B3AA004AB7CD /* ItemViewDemo2.m */; };
 		B236EE551F77B3AA004AB7CD /* ItemViewDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = B236EE3D1F77B3AA004AB7CD /* ItemViewDemo3.m */; };
@@ -220,7 +219,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B236EE521F77B3AA004AB7CD /* Info.plist in Resources */,
 				B236EE501F77B3AA004AB7CD /* Main.storyboard in Resources */,
 				B236EE4E1F77B3AA004AB7CD /* Assets.xcassets in Resources */,
 				B236EE4F1F77B3AA004AB7CD /* LaunchScreen.storyboard in Resources */,

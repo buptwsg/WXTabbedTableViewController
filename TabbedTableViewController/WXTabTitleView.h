@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "WXTabTitleViewProtocol.h"
 
+/**
+ Default tab title view.
+ */
 @interface WXTabTitleView : UIView <WXTabTitleViewProtocol>
 
 /**color for the selected title text*/

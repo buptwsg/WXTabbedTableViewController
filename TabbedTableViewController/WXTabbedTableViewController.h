@@ -15,13 +15,13 @@
 @interface WXTabbedTableViewController : UIViewController
 
 /**
- the outer table view. It has only one row, and the cell has a paging enabled horizontal scrolling UIScrollView. The scroll view can then
- have one or more UITableViews or UICollectionViews.
+ The outer table view. It has only one row, and the cell has a paging enabled horizontally scrolling UIScrollView. The scroll view can
+ have one or more pages, each page contains a UITableViews or UICollectionViews.
  */
 @property (strong, nonatomic, readonly) WXTabbedTableView *tableView;
 
 /**
- the default title view provided by this framework
+ The default title view provided by this framework
  */
 @property (strong, nonatomic, readonly) WXTabTitleView *defaultTitleView;
 
@@ -41,8 +41,8 @@
 - (UIView<WXTabTitleViewProtocol> *)tabTitleView;
 
 /**
- @brief subclass can override this method to config the default title view.
-        check WXTabTitleView.h for properties that can be configured.
+ @brief subclass can override this method to config the appearance of default title view.
+        Check WXTabTitleView.h for properties that can be configured.
 */
 - (void)configDefaultTitleView;
 

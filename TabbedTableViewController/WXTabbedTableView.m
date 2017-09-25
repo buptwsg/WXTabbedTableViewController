@@ -9,11 +9,11 @@
 #import "WXTabbedTableView.h"
 
 @implementation WXTabbedTableView {
-    NSMutableArray *_viewsToIgnoreTouch;
+    NSMutableArray *_viewsToReceiveTouch;
 }
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
-    for (UIView *view in self.viewsToIgnoreTouch) {
+    for (UIView *view in self.viewsToReceiveTouch) {
         CGPoint convertPoint = [view convertPoint: point fromView: self];
         if (!view.isHidden && view.userInteractionEnabled && [view pointInside: convertPoint withEvent: event]) {
             return NO;
@@ -27,21 +27,20 @@
     return YES;
 }
 
-- (void)addViewToIgnoreTouch:(UIView *)view {
-    [self.viewsToIgnoreTouch addObject: view];
+- (void)addViewToReceiveTouch:(UIView *)view {
+    [self.viewsToReceiveTouch addObject: view];
 }
 
-- (void)removeViewToIgnoreTouch:(UIView *)view {
-    [self.viewsToIgnoreTouch removeObject: view];
+- (void)removeViewToReceiveTouch:(UIView *)view {
+    [self.viewsToReceiveTouch removeObject: view];
 }
 
-- (NSMutableArray*)viewsToIgnoreTouch {
-    if (nil == _viewsToIgnoreTouch) {
-        _viewsToIgnoreTouch = [[NSMutableArray alloc] init];
+- (NSMutableArray*)viewsToReceiveTouch {
+    if (nil == _viewsToReceiveTouch) {
+        _viewsToReceiveTouch = [[NSMutableArray alloc] init];
     }
     
-    return _viewsToIgnoreTouch;
+    return _viewsToReceiveTouch;
 }
-
 
 @end

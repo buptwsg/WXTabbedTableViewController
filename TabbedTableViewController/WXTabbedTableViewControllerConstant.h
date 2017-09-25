@@ -8,13 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ @brief a list of view appear reasons
+ */
 typedef NS_ENUM(NSInteger, WXTabItemViewAppearReason) {
+    ///the view controller's viewWillAppear: method is called
     WXTabItemViewAppearByViewController,
+    ///user horizontally scroll or touch the title view to change tab
     WXTabItemViewAppearByChangingTab
 };
 
+/**
+ @brief a list of view disappear reasons
+ */
 typedef NS_ENUM(NSInteger, WXTabItemViewDisappearReason) {
+    ///the view controller's viewWillDisappear: method is called
     WXTabItemViewDisappearByViewController,
+    ///user horizontally scroll or touch the title view to change tab
     WXTabItemViewDisappearByChangingTab
 };
 
