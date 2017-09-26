@@ -54,6 +54,11 @@
 }
 
 #pragma mark - public methods
+- (void)setHorizontalScrollEnabled:(BOOL)horizontalScrollEnabled {
+    _horizontalScrollEnabled = horizontalScrollEnabled;
+    _horizontalScrollView.scrollEnabled = horizontalScrollEnabled;
+}
+
 - (void)addItemView:(WXTabItemBaseView *)itemView {
     [_horizontalScrollView addSubview: itemView];
     [_tabItemViews addObject: itemView];

@@ -14,7 +14,7 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
 
 @interface WXTabbedTableViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic, readonly) WXTabView *tabView;
+@property (strong, nonatomic) WXTabView *tabView;
 @property (nonatomic) BOOL canScroll;
 
 @end
@@ -23,6 +23,14 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver: self];
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _horizontalScrollEnabled = YES;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
@@ -78,8 +86,9 @@ static NSString * const WXTabCellIdentifier = @"TabCell";
     if (nil == self.tabView) {
         CGFloat height = [self tableView: tableView heightForRowAtIndexPath: indexPath];
         UIView<WXTabTitleViewProtocol> *tabTitleView = [self tabTitleView];
-        _tabView = [[WXTabView alloc] initWithFrame: CGRectMake(0, 0, self.tableView.frame.size.width, height) titleView: tabTitleView];
+        self.tabView = [[WXTabView alloc] initWithFrame: CGRectMake(0, 0, self.tableView.frame.size.width, height) titleView: tabTitleView];
         self.tabView.outerScrollView = self.tableView;
+        self.tabView.horizontalScrollEnabled = self.horizontalScrollEnabled;
         
         NSUInteger titleCount = [self tabTitles].count;
         for (NSUInteger i = 0; i < titleCount; i++) {

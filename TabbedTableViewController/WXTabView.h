@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic) UIScrollView *outerScrollView;
 
+@property (nonatomic) BOOL horizontalScrollEnabled;
+
 - (instancetype)initWithFrame:(CGRect)frame titleView: (UIView<WXTabTitleViewProtocol> *)titleView;
 
 - (void)addItemView: (WXTabItemBaseView*)itemView;

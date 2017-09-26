@@ -16,7 +16,7 @@
 
 /**
  The outer table view. It has only one row, and the cell has a paging enabled horizontally scrolling UIScrollView. The scroll view can
- have one or more pages, each page contains a UITableViews or UICollectionViews.
+ have one or more pages, each page contains a UITableView or UICollectionView.
  */
 @property (strong, nonatomic, readonly) WXTabbedTableView *tableView;
 
@@ -29,6 +29,11 @@
  the maximum y offset of the outer table view
  */
 @property (nonatomic, readonly) CGFloat tableViewMaxOffsetY;
+
+/**
+ If set to YES, users can horizontally scroll the pages. Default is YES.
+ */
+@property (nonatomic) BOOL horizontalScrollEnabled;
 
 /**
  @brief subclass should override this method to set title strings for tabs
