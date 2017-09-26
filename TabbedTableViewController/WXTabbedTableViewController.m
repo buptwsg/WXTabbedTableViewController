@@ -7,6 +7,7 @@
 //
 
 #import "WXTabbedTableViewController.h"
+#import "WXTabView.h"
 #import "WXTabItemBaseView.h"
 #import "WXTabbedTableViewControllerConstant.h"
 

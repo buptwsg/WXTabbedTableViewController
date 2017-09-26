@@ -10,7 +10,8 @@
 
 #import "WXTabbedTableView.h"
 #import "WXTabTitleView.h"
-#import "WXTabView.h"
+
+@class WXTabItemBaseView;
 
 @interface WXTabbedTableViewController : UIViewController
 

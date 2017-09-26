@@ -60,7 +60,7 @@
             
         case 2: {
             TabbedTableViewControllerDemo3 *vc = [[TabbedTableViewControllerDemo3 alloc] init];
-            vc.horizontalScrollEnabled = NO;
+            //vc.horizontalScrollEnabled = NO;
             [self.navigationController pushViewController: vc animated: YES];
         }
             break;
