@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WXTabbedTableViewController"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "A handy view controller class, it manages a table view which can have one or more table views or collection views as pages."
 
   # This description is used to generate tags and improve search results.
