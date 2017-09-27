@@ -35,7 +35,7 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *caseTitles = @[@"Use the view controller as is", @"No Tab", @"Three Tabs", @"Collection view in TabItemView", @"Self defined Tab title view"];
+    NSArray *caseTitles = @[@"Use the view controller as is", @"No Tab", @"Three Tabs", @"Collection view in TabItemView", @"Custom Tab title view"];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cell" forIndexPath: indexPath];
     cell.textLabel.text = caseTitles[indexPath.row];
     return cell;
