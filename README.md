@@ -2,6 +2,7 @@
 WXTabbedTableViewController is 
 
 See below gif for what this view controller can do.
+
 ![](https://github.com/buptwsg/WXTabbedTableViewController/blob/master/Demo.gif)
 
 # Usage
