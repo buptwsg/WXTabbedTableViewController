@@ -1,5 +1,5 @@
 # About WXTabbedTableViewController
-WXTabbedTableViewController is 
+WXTabbedTableViewController is a handy view controller class, it manages a table view which can have one or more table views or collection views as pages. These pages can be switched by horizontal scrolling or clicking their title.
 
 See below gif for what this view controller can do.
 
