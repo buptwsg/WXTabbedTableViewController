@@ -29,6 +29,17 @@
 		C602CEBB1F70CF6600377640 /* WXTabItemBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEBA1F70CF6600377640 /* WXTabItemBaseView.m */; };
 		C602CEBE1F70E21A00377640 /* WXTabbedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEBD1F70E21A00377640 /* WXTabbedTableView.m */; };
 		C637F4551F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = C637F4541F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m */; };
+		C69F47C91F7C9A920036EB16 /* WXTabbedTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C602CE821F6FA39B00377640 /* WXTabbedTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C69F47CA1F7C9A950036EB16 /* WXTabTitleViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = C602CEB21F70B76100377640 /* WXTabTitleViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C69F47CC1F7C9AA00036EB16 /* WXTabTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = C602CEB61F70BA0900377640 /* WXTabTitleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C69F47CD1F7C9AA40036EB16 /* WXTabItemBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = C602CEB91F70CF6600377640 /* WXTabItemBaseView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C69F47CE1F7C9AA90036EB16 /* WXTabbedTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = C602CEBC1F70E21A00377640 /* WXTabbedTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C69F47CF1F7C9ABA0036EB16 /* WXTabbedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CE831F6FA39B00377640 /* WXTabbedTableViewController.m */; };
+		C69F47D01F7C9ABD0036EB16 /* WXTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEB41F70B9FA00377640 /* WXTabView.m */; };
+		C69F47D11F7C9ABF0036EB16 /* WXTabTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEB71F70BA0900377640 /* WXTabTitleView.m */; };
+		C69F47D21F7C9AC70036EB16 /* WXTabItemBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEBA1F70CF6600377640 /* WXTabItemBaseView.m */; };
+		C69F47D31F7C9ACB0036EB16 /* WXTabbedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C602CEBD1F70E21A00377640 /* WXTabbedTableView.m */; };
+		C69F47D41F7C9AD40036EB16 /* WXTabbedTableViewControllerConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = C637F4541F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,10 +100,20 @@
 		C637F4531F7257F400FF32BC /* WXTabbedTableViewControllerConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTabbedTableViewControllerConstant.h; sourceTree = "<group>"; };
 		C637F4541F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTabbedTableViewControllerConstant.m; sourceTree = "<group>"; };
 		C69F47531F7B8C2A0036EB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C69F47C11F7C99570036EB16 /* WXTabbedTableViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WXTabbedTableViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C69F47C31F7C99580036EB16 /* CarthageSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarthageSupport.h; sourceTree = "<group>"; };
+		C69F47C41F7C99580036EB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B2EC8BA31F6EAB51008AC27C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C69F47BD1F7C99570036EB16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -144,6 +165,7 @@
 				B236EE2D1F77B3AA004AB7CD /* Demo */,
 				C602CE811F6FA34E00377640 /* TabbedTableViewController */,
 				C69F47511F7B8C2A0036EB16 /* WXTabbedTableViewController */,
+				C69F47C21F7C99580036EB16 /* CarthageSupport */,
 				B2EC8BA71F6EAB51008AC27C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				B2EC8BA61F6EAB51008AC27C /* TabbedTableViewController.app */,
+				C69F47C11F7C99570036EB16 /* WXTabbedTableViewController.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,7 +207,31 @@
 			path = WXTabbedTableViewController;
 			sourceTree = "<group>";
 		};
+		C69F47C21F7C99580036EB16 /* CarthageSupport */ = {
+			isa = PBXGroup;
+			children = (
+				C69F47C31F7C99580036EB16 /* CarthageSupport.h */,
+				C69F47C41F7C99580036EB16 /* Info.plist */,
+			);
+			path = CarthageSupport;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C69F47BE1F7C99570036EB16 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C69F47C91F7C9A920036EB16 /* WXTabbedTableViewController.h in Headers */,
+				C69F47CA1F7C9A950036EB16 /* WXTabTitleViewProtocol.h in Headers */,
+				C69F47CC1F7C9AA00036EB16 /* WXTabTitleView.h in Headers */,
+				C69F47CD1F7C9AA40036EB16 /* WXTabItemBaseView.h in Headers */,
+				C69F47CE1F7C9AA90036EB16 /* WXTabbedTableView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		B2EC8BA51F6EAB51008AC27C /* TabbedTableViewController */ = {
@@ -205,6 +252,24 @@
 			productReference = B2EC8BA61F6EAB51008AC27C /* TabbedTableViewController.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C69F47C01F7C99570036EB16 /* CarthageSupport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C69F47C81F7C99580036EB16 /* Build configuration list for PBXNativeTarget "CarthageSupport" */;
+			buildPhases = (
+				C69F47BC1F7C99570036EB16 /* Sources */,
+				C69F47BD1F7C99570036EB16 /* Frameworks */,
+				C69F47BE1F7C99570036EB16 /* Headers */,
+				C69F47BF1F7C99570036EB16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CarthageSupport;
+			productName = CarthageSupport;
+			productReference = C69F47C11F7C99570036EB16 /* WXTabbedTableViewController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -216,6 +281,10 @@
 				TargetAttributes = {
 					B2EC8BA51F6EAB51008AC27C = {
 						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					C69F47C01F7C99570036EB16 = {
+						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -234,6 +303,7 @@
 			projectRoot = "";
 			targets = (
 				B2EC8BA51F6EAB51008AC27C /* TabbedTableViewController */,
+				C69F47C01F7C99570036EB16 /* CarthageSupport */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +316,13 @@
 				B236EE501F77B3AA004AB7CD /* Main.storyboard in Resources */,
 				B236EE4E1F77B3AA004AB7CD /* Assets.xcassets in Resources */,
 				B236EE4F1F77B3AA004AB7CD /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C69F47BF1F7C99570036EB16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +352,19 @@
 				B236EE591F77B3AA004AB7CD /* TabbedTableViewControllerDemo2.m in Sources */,
 				B236EE5C1F77B3AA004AB7CD /* TabbedTableViewControllerDemo5.m in Sources */,
 				B236EE531F77B3AA004AB7CD /* ItemViewDemo1.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C69F47BC1F7C99570036EB16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C69F47CF1F7C9ABA0036EB16 /* WXTabbedTableViewController.m in Sources */,
+				C69F47D01F7C9ABD0036EB16 /* WXTabView.m in Sources */,
+				C69F47D11F7C9ABF0036EB16 /* WXTabTitleView.m in Sources */,
+				C69F47D21F7C9AC70036EB16 /* WXTabItemBaseView.m in Sources */,
+				C69F47D31F7C9ACB0036EB16 /* WXTabbedTableView.m in Sources */,
+				C69F47D41F7C9AD40036EB16 /* WXTabbedTableViewControllerConstant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +518,60 @@
 			};
 			name = Release;
 		};
+		C69F47C61F7C99580036EB16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CarthageSupport/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "-fembed-bitcode";
+				PRODUCT_BUNDLE_IDENTIFIER = com.buptwsg.CarthageSupport;
+				PRODUCT_NAME = WXTabbedTableViewController;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C69F47C71F7C99580036EB16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CarthageSupport/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "-fembed-bitcode";
+				PRODUCT_BUNDLE_IDENTIFIER = com.buptwsg.CarthageSupport;
+				PRODUCT_NAME = WXTabbedTableViewController;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -445,6 +589,15 @@
 			buildConfigurations = (
 				B2EC8BBE1F6EAB51008AC27C /* Debug */,
 				B2EC8BBF1F6EAB51008AC27C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C69F47C81F7C99580036EB16 /* Build configuration list for PBXNativeTarget "CarthageSupport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C69F47C61F7C99580036EB16 /* Debug */,
+				C69F47C71F7C99580036EB16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
