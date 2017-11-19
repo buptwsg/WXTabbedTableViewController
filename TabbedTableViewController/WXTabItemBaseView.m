@@ -23,6 +23,8 @@
 - (instancetype)initWithIndex:(NSUInteger)index size:(CGSize)viewSize {
     self = [super initWithFrame: CGRectMake(index * viewSize.width, 0, viewSize.width, viewSize.height)];
     if (self) {
+        _index = index;
+        
         UITableView *tableView = [[UITableView alloc] initWithFrame: self.bounds];
         tableView.dataSource = self;
         tableView.delegate = self;

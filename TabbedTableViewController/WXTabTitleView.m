@@ -205,6 +205,12 @@ static UIFont * fontFromNameAndSize(NSString *name, CGFloat fontSize) {
     }
 }
 
+- (void)setTitle:(NSString *)title forIndex:(NSUInteger)index {
+    if (index < self.titleButtonArray.count) {
+        [self.titleButtonArray[index] setTitle: title forState: UIControlStateNormal];
+    }
+}
+
 #pragma mark - Private Methods
 - (void)clickButton: (UIButton*)sender {
     NSUInteger tag = sender.tag;

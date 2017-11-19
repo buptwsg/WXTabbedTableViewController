@@ -27,4 +27,9 @@ typedef void (^WXTabTitleClickBlock)(NSUInteger newIndex, NSUInteger oldIndex);
  */
 @property (nonatomic) NSUInteger selectedItem;
 
+/**
+ Set a new title for specified index
+ */
+- (void)setTitle: (NSString*)title forIndex: (NSUInteger)index;
+
 @end

@@ -57,6 +57,10 @@
     }
 }
 
+- (void)setTitle:(NSString *)title forIndex:(NSUInteger)index {
+    
+}
+
 - (void)buttonClicked: (UIButton*)sender {
     NSUInteger tag = sender.tag;
     NSUInteger oldSelectedItem = self.selectedItem;
@@ -65,4 +69,5 @@
         self.titleClickBlock(tag, oldSelectedItem);
     }
 }
+
 @end

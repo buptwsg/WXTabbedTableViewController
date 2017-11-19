@@ -9,6 +9,8 @@
 #import "WXTabView.h"
 #import "WXTabItemBaseView.h"
 
+static void *WXTabTitleObservationContext = &WXTabTitleObservationContext;
+
 @interface WXTabView () <UIScrollViewDelegate>
 
 @property (strong, nonatomic) UIView<WXTabTitleViewProtocol> *titleView;
@@ -18,6 +20,12 @@
 @end
 
 @implementation WXTabView
+
+- (void)dealloc {
+    [self.tabItemViews enumerateObjectsUsingBlock:^(WXTabItemBaseView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeObserver: self forKeyPath: @"title"];
+    }];
+}
 
 - (instancetype)initWithFrame:(CGRect)frame titleView:(UIView<WXTabTitleViewProtocol> *)titleView {
     self = [super initWithFrame: frame];
@@ -61,7 +69,10 @@
 
 - (void)addItemView:(WXTabItemBaseView *)itemView {
     [_horizontalScrollView addSubview: itemView];
+    itemView.title = self.titleView.tabTitles[itemView.index];
     [_tabItemViews addObject: itemView];
+    
+    [itemView addObserver: self forKeyPath: @"title" options: kNilOptions context: WXTabTitleObservationContext];
 }
 
 - (void)viewWillAppear {
@@ -108,4 +119,14 @@
     }
 }
 
+#pragma mark - KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if (context == WXTabTitleObservationContext) {
+        WXTabItemBaseView *itemView = (WXTabItemBaseView*)object;
+        [self.titleView setTitle: itemView.title forIndex: itemView.index];
+    }
+    else {
+        [super observeValueForKeyPath: keyPath ofObject: object change: change context: context];
+    }
+}
 @end

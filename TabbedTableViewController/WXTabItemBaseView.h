@@ -23,6 +23,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nonnull) UIScrollView *scrollView;
 
 /**
+ The index of this item view.
+ */
+@property (nonatomic) NSUInteger index;
+
+/**
+ The displayed title for this tab item view. Change this property will update the tab title view.
+ */
+@property (copy, nonatomic) NSString *title;
+
+/**
  @brief the initializer method
  @param index the index of the tab item view
  @param viewSize the width and height of the tab item view.

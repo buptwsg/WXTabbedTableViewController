@@ -99,7 +99,6 @@
 		C602CEBD1F70E21A00377640 /* WXTabbedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabbedTableView.m; sourceTree = "<group>"; };
 		C637F4531F7257F400FF32BC /* WXTabbedTableViewControllerConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXTabbedTableViewControllerConstant.h; sourceTree = "<group>"; };
 		C637F4541F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXTabbedTableViewControllerConstant.m; sourceTree = "<group>"; };
-		C69F47531F7B8C2A0036EB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C69F47C11F7C99570036EB16 /* WXTabbedTableViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WXTabbedTableViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69F47C31F7C99580036EB16 /* CarthageSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarthageSupport.h; sourceTree = "<group>"; };
 		C69F47C41F7C99580036EB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,7 +163,6 @@
 			children = (
 				B236EE2D1F77B3AA004AB7CD /* Demo */,
 				C602CE811F6FA34E00377640 /* TabbedTableViewController */,
-				C69F47511F7B8C2A0036EB16 /* WXTabbedTableViewController */,
 				C69F47C21F7C99580036EB16 /* CarthageSupport */,
 				B2EC8BA71F6EAB51008AC27C /* Products */,
 			);
@@ -197,14 +195,6 @@
 				C637F4541F7257F400FF32BC /* WXTabbedTableViewControllerConstant.m */,
 			);
 			path = TabbedTableViewController;
-			sourceTree = "<group>";
-		};
-		C69F47511F7B8C2A0036EB16 /* WXTabbedTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C69F47531F7B8C2A0036EB16 /* Info.plist */,
-			);
-			path = WXTabbedTableViewController;
 			sourceTree = "<group>";
 		};
 		C69F47C21F7C99580036EB16 /* CarthageSupport */ = {
